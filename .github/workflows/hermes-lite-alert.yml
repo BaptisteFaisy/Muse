@@ -10,6 +10,10 @@ on:
 permissions:
   pull-requests: read
 
+concurrency:
+  group: hermes-lite-alert-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   alert:
     name: Lister les PR en conflit
