@@ -13,6 +13,15 @@
   labels `urgent` (haute) et `priority-low` (basse). L'App GitHub Mergify doit
   être installée sur le dépôt (reste à faire, geste humain).
 - **stale-base-guard** : check informatif de retard de branche.
+- **ci-budget** (`.github/workflows/ci-budget.yml` +
+  `.github/ci-budget/check_timeouts.py`) : garde-fou du budget CI de
+  **5 minutes** (règle user 2026-10-24). Chaque job doit déclarer
+  `timeout-minutes: 5` au plus ; un job plus long = CI refusée (le check
+  `ci-budget` est exigé par `queue_conditions` dans `.mergify.yml`). Toute
+  nouvelle CI suit : `concurrency` + `cancel-in-progress`, `fetch-depth: 1`,
+  filtres `paths:`, cache. Build natif / suite longue : hors PR (tag,
+  `main`, ou `workflow_dispatch`), timeout justifié en commentaire.
+  Détail : `~/Bureau/CI-BUDGET-5MIN.md`.
 
 ## Mise en service (ordre)
 

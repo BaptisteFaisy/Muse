@@ -34,10 +34,11 @@ jobs:
   gate:
     name: Verdict
     runs-on: [self-hosted, muse-worker]
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 1
           persist-credentials: false
       - name: Gate
         run: |
