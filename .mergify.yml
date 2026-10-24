@@ -36,12 +36,7 @@ merge_queue:
   # Mergify reste bornee a 4, ajustable.
   max_parallel_checks: 4
 
-pull_request_rules:
-  - name: file automatique des PR pretes
-    conditions:
-      - -closed
-      - -draft
-      - -conflict
-      - base = main
-    actions:
-      queue:
+# Auto-queue natif (produit Merge Queue) : évite de dépendre du produit
+# « Workflow Automation » (pull_request_rules), constaté désactivé le 24/10.
+merge_protections_settings:
+  auto_merge_conditions: true
