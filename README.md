@@ -21,3 +21,8 @@
 3. retirer la variable `HERMES_LITE_DRY_RUN` si l'on veut que le gate hermes-lite
    merge lui-même (sinon Mergify reste le seul pilote de merge — contrat duello
    `MERGIFY_QUEUE_ENABLED` 2026-10-10 : **un seul pilote de merge**).
+
+## Vérification Mergify (2026-10-24)
+
+Test réel de la file : cette PR sert à confirmer que l'App Mergify réagit bien
+sur ce dépôt (commentaire/check `Mergify` puis embarquement dans la file).
