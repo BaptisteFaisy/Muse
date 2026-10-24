@@ -17,7 +17,8 @@
 ## Mise en service (ordre)
 
 1. (fait par l'agent) workers enregistrés et en ligne ;
-2. installer l'app GitHub **Mergify** sur `BaptisteFaisy/Muse` ;
+2. (fait le 24/10/2026) app GitHub **Mergify** installée sur le compte, accès
+   « All repositories » — le produit Merge Queue s'active alors seul ;
 3. retirer la variable `HERMES_LITE_DRY_RUN` si l'on veut que le gate hermes-lite
    merge lui-même (sinon Mergify reste le seul pilote de merge — contrat duello
    `MERGIFY_QUEUE_ENABLED` 2026-10-10 : **un seul pilote de merge**).
